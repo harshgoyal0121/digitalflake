@@ -1,0 +1,71 @@
+.loginContainer{
+    display: flex;
+    position: relative;
+}
+.loginBg{
+    height: 100vh;
+    width: 100vw;
+}
+.loginBox{
+    height: 85vh;
+    width: 42vw;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: absolute;
+    left: 5%;
+    top: 9%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.icon{
+    justify-content: center;
+    // align-items: center;
+    height: 128px;
+    width: 231px;
+    margin-top: 5vh;
+}
+.login_details{
+    display: flex;
+    flex-direction: column;
+    // height: 50vw;
+    width: 37vw;
+}
+.form_group{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.5rem;
+}
+.form_input{
+    outline: none;
+    border: 0px;
+    width: 32vw;
+    font-size: 2.5vh;
+}
+.midEye{
+    border: 0px;
+    background-color: white;
+    outline: none;
+    padding: 0;
+}
+.submit_box{
+    display: flex;
+    flex-direction: column;
+}
+.forgot_pass{
+    margin-top: 0.5rem;
+    border: 0px;
+    background-color: #fff;
+    align-self: end;
+}
+.form_submit{
+    margin-top: 5%;
+    height: 8vh;
+    background-color: rgb(149, 67, 149);
+    border: 0px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 400;
+    font-size: 20px;
+}
