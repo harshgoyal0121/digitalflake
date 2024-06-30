@@ -5,6 +5,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import authRoutes from './routes/auth';
 import categoryRoutes from './routes/category';
+import productRoutes from './routes/product';
 
 dotenv.config();
 
@@ -23,7 +24,7 @@ app.use(express.json());
 
 app.use('/api/auth', authRoutes);
 app.use('/api/category', categoryRoutes);
-
+app.use('api/product', productRoutes);
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

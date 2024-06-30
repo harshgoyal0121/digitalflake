@@ -21,43 +21,74 @@ interface RowData {
 
 const Category: React.FC<CategoryProps> = ({ setAddNewClicked }) => {
   const [rows, setRows] = useState<RowData[]>([]);
+  
   const columns: GridColDef<RowData>[] = [
     {
-      field: "id",
-      headerName: "ID" ,
-      width: 25,
-      renderCell: (params) => <img src={upDownIcon} alt="" />,
+      field: "iD",
+      width: 100,
+      hideSortIcons: true,
+      disableColumnMenu: true,
+      renderHeader: () => (
+        <div className={s.headerContainer}>
+          <span style={{ fontWeight: "bold" }}>ID</span>
+          <img
+            src={upDownIcon}
+            alt="Menu Icon"
+            className={s.customMenuIcon}
+          />
+        </div>
+      ),
     },
     {
       field: "name",
-      headerName: "NAME",
-      width: 210,
-      renderCell: (params) => <img src={upDownIcon} alt="" />,
+      width: 240,
+      hideSortIcons: true,
+      disableColumnMenu: true,
+      renderHeader: () => (
+        <div className={s.headerContainer}>
+          <span style={{ fontWeight: "bold" }}>NAME</span>
+          <img
+            src={upDownIcon}
+            alt="Menu Icon"
+            className={s.customMenuIcon}
+          />
+        </div>
+      ),
     },
     {
       field: "description",
-      headerName: "DESCRIPTION",
-      width: 210,
-      renderCell: (params) => <img src={upDownIcon} alt="" />,
+      width: 400,
+      hideSortIcons: true,
+      disableColumnMenu: true,
+      renderHeader: () => (
+        <div className={s.headerContainer}>
+          <span style={{ fontWeight: 'bold', paddingLeft: "30v" }}>DESCRIPTION</span>
+          <img
+            src={upDownIcon}
+            alt="Menu Icon"
+            className={s.customMenuIcon}
+          />
+        </div>
+      ),
     },
     {
       field: "status",
-      headerName: "STATUS",
       width: 210,
-      renderCell: (params) => <img src={upDownIcon} alt="" />,
+      hideSortIcons: true,
+      disableColumnMenu: true,
+      renderHeader: () => (
+        <div className={s.headerContainer}>
+          <span style={{ fontWeight: "bold" }}>STATUS</span>
+          <img
+            src={upDownIcon}
+            alt="Menu Icon"
+            className={s.customMenuIcon}
+          />
+        </div>
+      ),
     },
-    // {
-    //   field: "actions",
-    //   headerName: "",
-    //   width: 40,
-    //   sortable: false,
-    //   renderCell: (params) => (
-    //     <IconButton onClick={() => handleArrowClick(params.row.id)}>
-    //       <ArrowForwardIcon />
-    //     </IconButton>
-    //   ),
-    // },
   ];
+
   useEffect(() => {
     const fetchCategories = async () => {
       try {
@@ -65,22 +96,20 @@ const Category: React.FC<CategoryProps> = ({ setAddNewClicked }) => {
         setRows(response.data);
         console.log(rows);
       } catch (error) {
-        console.log("Error in fethcing categories:", error);
+        console.log("Error in fetching categories:", error);
       }
     };
     fetchCategories();
   }, []);
-//   const rows: RowData[] = [
-//   { id: 1, imageUrl: homeImg, infoName: "Home" },
-//   { id: 2, imageUrl: categoryImg, infoName: "Category" },
-//   { id: 3, imageUrl: productImg, infoName: "Products" },
-// ];
+
   const handleSearch = (searchValue: string) => {
     console.log("Searching for:", searchValue);
   };
+
   const handleClick = () => {
     setAddNewClicked();
   };
+
   return (
     <div className={s.container}>
       <div className={s.categoryNav}>
@@ -101,14 +130,15 @@ const Category: React.FC<CategoryProps> = ({ setAddNewClicked }) => {
         </div>
       </div>
       <div>
-        <Box sx={{ height: "75vh", width: "169.5vh", borderRadius: "1vw" }}>
+        <Box sx={{ height: "75vh", width: "169.5vh", borderRadius: "1vw"}}>
           <DataGrid
-            style={{ border: 0, backgroundColor: "gray", borderRadius: 0 }}
-            // key={rowUpdate}
+            style={{ border: 0 }}
+            className={s.customTable}
             rows={rows}
             columns={columns}
             hideFooter
             getRowId={(row) => row._id}
+            getRowClassName={() => s.customRow}
           />
         </Box>
       </div>

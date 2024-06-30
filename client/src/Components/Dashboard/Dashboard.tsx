@@ -40,6 +40,10 @@ const Dashboard: React.FC = () => {
     setSelectedRowId(4);
     setRowUpdate((prev) => prev + 1);
   }, []);
+  const handleAddNewProductClick = useCallback(()=>{
+    setSelectedRowId(5);
+    setRowUpdate((prev)=>prev+1);
+  }, [])
   const columns: GridColDef<RowData>[] = [
     {
       field: "imageUrl",
@@ -107,7 +111,7 @@ const Dashboard: React.FC = () => {
             <SelectedComponent
               {...(selectedRowId === 2
                 ? { setAddNewClicked: handleAddNewClick }
-                : {})}
+                : {setAddNewProductClicked: handleAddNewProductClick})}
             />
           )}
         </div>

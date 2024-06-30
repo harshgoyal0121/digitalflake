@@ -24,3 +24,22 @@
   margin-top: 2vh;
   width: 7vw;
 }
+
+.customTable {
+  background-color: white; /* Set the background color of the entire table */
+  border-radius: 10px;
+}
+
+.customCell {
+  color: #333333; /* Set the text color of cells */
+  padding: 8px;
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+}
+.customMenuIcon {
+  margin-left: 0.5vw;
+  width: 1vw;
+}
