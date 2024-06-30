@@ -35,26 +35,54 @@
   // height: 50vw;
   width: 37vw;
 }
-.form_group {
-  display: flex;
-  flex-direction: column;
-  margin-top: 3vh;
+.form_group1 {
+  position: relative;
+  margin-top: 2vh;
 }
 .form_input {
-  outline: none;
-  border: 0px;
-  width: 32vw;
-  font-size: 2.5vh;
+  font-size: 1vw;
+  width: 36.5vw;
+  height: 6vh;
+  border-radius: 0.6vh;
+  border: 0.2vh solid #686868;
+  padding-left: 1vw;
 }
-legend {
-  font-size: 16px !important;
-  color: #717070;
+.formLabel {
+  font-size: 1.4vw;
+  position: absolute;
+  top: -2.7vh;
+  left: 10px;
+  background: white;
+  padding: 0 5px;
+  transition: 0.2s;
+  color: #1f1f1f;
+  pointer-events: none;
+}
+
+input:focus {
+  outline: none;
+  border-color: #a19f9f;
+}
+.form_group2 {
+  position: relative;
+  margin-top: 6vh;
+  display: flex;
+  flex-direction: row;
+}
+.form_input2 {
+  border-right: 0px !important;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 .midEye {
   border: 0px;
   background-color: white;
   outline: none;
-  padding: 0;
+  border: 0.2vh solid #686868;
+  border-left: 0px;
+  border-radius: 1vh;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 .submit_box {
   display: flex;
@@ -74,7 +102,7 @@ legend {
   border-radius: 1vh;
   color: #fff;
   font-weight: 400;
-  font-size: 2vw;
+  font-size: 1.58vw;
 }
 .register {
   font-size: 1.25vw;
