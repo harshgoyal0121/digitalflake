@@ -12,17 +12,20 @@ const AddCategory = () => {
   const [name, setName] = useState<string>("");
   const [description, setDescription] = useState<string>("");
   const [status, setStatus] = useState(options[0].label);
+  const [iD, setID] = useState<number>(101);
   const navigate = useNavigate();
 
   const handleFormClick = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       const response = await axios.post("/api/category", {
+        iD,
         name,
         description,
         status,
       });
       console.log("Response:", response.data);
+      setID((prevID) => prevID + 1);
     } catch (error: any) {
       console.error("Error logging in:", error.response?.data || error.message);
     }

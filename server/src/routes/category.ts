@@ -13,9 +13,9 @@ router.get('/', async(req, res) =>{
   }
 })
 router.post('/', async (req, res) => {
-  const { name, description, status } = req.body;
+  const { iD,name, description, status } = req.body;
   try {
-    const newCategory = new Category({ name, description, status });
+    const newCategory = new Category({ iD, name, description, status });
     await newCategory.save();
     res.status(201).json({ message: 'Category created successfully' });
   } catch (error) {

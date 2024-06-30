@@ -13,7 +13,7 @@ interface CategoryProps {
 }
 
 interface RowData {
-  id: number;
+  _id: number;
   name: string;
   description: string;
   status: string;
@@ -24,7 +24,7 @@ const Category: React.FC<CategoryProps> = ({ setAddNewClicked }) => {
   const columns: GridColDef<RowData>[] = [
     {
       field: "id",
-      headerName: "ID",
+      headerName: "ID" ,
       width: 25,
       renderCell: (params) => <img src={upDownIcon} alt="" />,
     },
@@ -63,13 +63,18 @@ const Category: React.FC<CategoryProps> = ({ setAddNewClicked }) => {
       try {
         const response = await axios.get("/api/category");
         setRows(response.data);
+        console.log(rows);
       } catch (error) {
         console.log("Error in fethcing categories:", error);
       }
     };
     fetchCategories();
   }, []);
-
+//   const rows: RowData[] = [
+//   { id: 1, imageUrl: homeImg, infoName: "Home" },
+//   { id: 2, imageUrl: categoryImg, infoName: "Category" },
+//   { id: 3, imageUrl: productImg, infoName: "Products" },
+// ];
   const handleSearch = (searchValue: string) => {
     console.log("Searching for:", searchValue);
   };
@@ -103,8 +108,7 @@ const Category: React.FC<CategoryProps> = ({ setAddNewClicked }) => {
             rows={rows}
             columns={columns}
             hideFooter
-            columnHeaderHeight={0}
-            getRowId={(row) => row.id} // Ensure DataGrid can uniquely identify rows
+            getRowId={(row) => row._id}
           />
         </Box>
       </div>
