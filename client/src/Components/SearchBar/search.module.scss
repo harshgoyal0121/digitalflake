@@ -1,0 +1,24 @@
+/* style.module.scss or your preferred styling file */
+.search_bar {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 2vh;
+}
+
+.search_icon {
+  width: 3vh; /* Adjust size as needed */
+  height: 3vh;
+  position: absolute;
+  left: 1.5vh ; /* Adjust position relative to input field */
+  pointer-events: none; /* Ensure the icon does not interfere with input focus */
+  color: #ebe9e9;
+}
+
+.search_input {
+  padding-left: 2.5vw; /* Ensure text doesn't overlap with icon */
+  border: 0.2vh solid #B0ADAD;
+  border-radius: 1vh;
+  width: 30vw;
+  margin-right: 12vw;
+}

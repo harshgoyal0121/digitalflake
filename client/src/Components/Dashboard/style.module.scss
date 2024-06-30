@@ -1,0 +1,66 @@
+.body{
+    display: flex;
+    flex-direction: column;
+}
+.navbar{
+    background-color: rgb(112, 45, 112);
+    height: 12vh;
+    width: 100vw;
+    display: flex;
+    flex-direction:row;
+    justify-content:space-between;
+}
+.nav_item{
+    color: white;
+    display: flex;
+    flex-direction: row;
+}
+.boxOnD{
+    border: 1px solid white;
+    border-radius: 5px;
+    height: 7vh;
+    width: 3.5vw;
+    margin-top: 2.5vh;
+    margin-left: 1.5vw;
+    margin-right: 1vh;
+    display: flex;
+    flex-direction: row ;
+}
+.square{
+    font-size: 4vh;
+    font-weight: bold;
+    padding-left:  1vw;
+    padding-right: 0.25vw;
+}
+// .bracket{
+//     font-size: 4vh;
+//     font-weight: bold;
+// }
+.digital{
+    font-size: 4vh;
+    font-weight: bold;
+    margin-top: 2.5vh;
+}
+.flake{
+    font-size: 4vh;
+    font-weight: 400;
+    margin-top: 2.5vh;
+}
+.nav_img{
+    background-color: rgb(112, 45, 112);
+    border: 0px;
+}
+.info_body{
+    display: flex;
+    flex-direction: row;
+}
+.clicked_row{
+    background-color:  #FFF8B7;
+}
+.clicked_row:hover{
+    background-color: #FFF8B7 !important;
+    border: 0px;
+}
+.data{
+    width: 200vw;
+}
