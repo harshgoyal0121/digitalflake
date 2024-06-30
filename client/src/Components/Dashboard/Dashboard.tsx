@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import s from "./style.module.scss";
 import userImage from "../../Assets/account_icon.svg";
 import homeImg from "../../Assets/home.svg";
@@ -8,6 +8,8 @@ import { DataGrid, GridColDef, GridRowParams } from "@mui/x-data-grid";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, IconButton } from "@mui/material";
 import ComponentMap from "../Category/CategoryWrapper";
+import { useLocation } from "react-router-dom";
+import { set } from "mongoose";
 
 interface RowData {
   id: number;
@@ -23,13 +25,19 @@ const rows: RowData[] = [
 const Dashboard: React.FC = () => {
   const [selectedRowId, setSelectedRowId] = useState<number>(1);
   const [rowUpdate, setRowUpdate] = useState<number>(0);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.rowId) setSelectedRowId(location.state.rowId);
+  }, [location.state]);
 
   const handleArrowClick = useCallback((id: number) => {
     setSelectedRowId(id);
     setRowUpdate((prev) => prev + 1);
   }, []);
+
   const handleAddNewClick = useCallback(() => {
-    setSelectedRowId(4); // 4 corresponds to AddCategory in the componentMap
+    setSelectedRowId(4);
     setRowUpdate((prev) => prev + 1);
   }, []);
   const columns: GridColDef<RowData>[] = [

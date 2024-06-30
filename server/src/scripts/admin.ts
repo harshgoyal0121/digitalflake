@@ -16,10 +16,9 @@ const createAdminUser = async () => {
       console.log('Admin user already exists');
       return;
     }
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(password, salt);
-    console.log('Hashed Password:', hashedPassword); 
-    const adminUser = new User({ email, password: hashedPassword });
+    // const salt = await bcrypt.genSalt(10);
+    // const hashedPassword = await bcrypt.hash(password, salt); 
+    const adminUser = new User({ email, password });
     await adminUser.save();
 
     console.log('Admin user created successfully');

@@ -10,7 +10,6 @@ import Image from "react-bootstrap/Image";
 const Login: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [error, setError] = useState<string>("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -28,7 +27,6 @@ const Login: React.FC = () => {
       // Handle successful login (e.g., save token, redirect, etc.)
     } catch (error: any) {
       console.error("Error logging in:", error.response?.data || error.message);
-      setError("wrong");
     }
   };
 
@@ -74,7 +72,6 @@ const Login: React.FC = () => {
               </button>
             </div>
           </form>
-          {error && <p className={s.error}>{error}</p>}
         </div>
       </div>
     </div>
