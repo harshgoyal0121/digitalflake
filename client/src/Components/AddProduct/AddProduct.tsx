@@ -33,9 +33,14 @@ const AddProduct = () => {
       });
       console.log("Response:", response.data);
       setID((prevID) => prevID + 1);
+      navigate("/dashboard", { state: { trowId: 3 } });
     } catch (error: any) {
-      console.error("Error logging in:", error.response?.data || error.message);
+      console.error("Error:", error.response?.data || error.message);
     }
+  };
+  const handleImgeInput = (e: any) => {
+    console.log(e.target.files);
+    setImage(URL.createObjectURL(e.target.files[0]));
   };
   return (
     <div className={s.container}>
@@ -43,7 +48,7 @@ const AddProduct = () => {
         <IconButton>
           <ArrowBackwardIcon
             className={s.arrow}
-            onClick={() => navigate("/dashboard", { state: { rowId: 2 } })}
+            onClick={() => navigate("/dashboard", { state: { rowId: 3 } })}
           />
         </IconButton>
         <p className={s.content}>Add Product</p>
@@ -52,7 +57,7 @@ const AddProduct = () => {
         <form onSubmit={handleFormClick}>
           <div className={s.formBox}>
             <div className={s.categoryInput}>
-              <input    
+              <input
                 className={s.inputButton}
                 type="text"
                 name="category"
@@ -107,10 +112,10 @@ const AddProduct = () => {
               <div className={s.categoryInput}>
                 <input
                   className={s.inputButton}
-                  type="text"
+                  type="file"
                   name="image"
-                  value={image}
-                  onChange={(e) => setImage(e.target.value)}
+                  // value={image}
+                  onChange={handleImgeInput}
                   required
                 />
                 <label htmlFor="" className={s.categoryName}>
@@ -139,7 +144,7 @@ const AddProduct = () => {
                 <button
                   className={s.cancel}
                   onClick={() =>
-                    navigate("/dashboard", { state: { rowId: 2 } })
+                    navigate("/dashboard", { state: { rowId: 3 } })
                   }
                 >
                   Cancel

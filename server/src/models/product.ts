@@ -7,7 +7,7 @@ interface IProduct {
   category: string;
   mrp: string;
   image: string;
-  status;
+  status: string;
 }
 
 const ProductSchema = new Schema<IProduct>({

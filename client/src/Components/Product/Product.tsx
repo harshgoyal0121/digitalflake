@@ -99,6 +99,14 @@ const Product: React.FC<ProductProps> = ({ setAddNewProductClicked }) => {
           <img src={upDownIcon} alt="Menu Icon" className={s.customMenuIcon} />
         </div>
       ),
+      renderCell: (params) =>(        
+      <Box
+          component= "img"
+          sx = {{height: 40, width: '40%'}}
+          src = {params.value}
+          alt = {params.row.name}
+        />
+      ),
     },
     {
       field: "status",

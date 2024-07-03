@@ -13,7 +13,12 @@ router.get('/', async(req, res) =>{
   }
 })
 router.post('/', async (req, res) => {
+  console.log("Hello");
   const { iD,name, packSize, category, mrp, image ,status } = req.body;
+  // if(Product.findOne({name})){
+  //   return res.status(500).json({message: "This product is already exist"});
+  // }
+  
   try {
     const newCategory = new Product({ iD,name, packSize, category, mrp, image ,status});
     await newCategory.save();

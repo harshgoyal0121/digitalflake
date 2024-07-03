@@ -26,8 +26,10 @@ const AddCategory = () => {
       });
       console.log("Response:", response.data);
       setID((prevID) => prevID + 1);
+      navigate("/dashboard", { state: { rowId: 2 } });
     } catch (error: any) {
       console.error("Error logging in:", error.response?.data || error.message);
+      alert("This Category already exist");
     }
   };
   return (

@@ -24,7 +24,6 @@ const Login: React.FC = () => {
       });
       console.log("Response:", response.data);
       navigate("/dashboard");
-      // Handle successful login (e.g., save token, redirect, etc.)
     } catch (error: any) {
       console.error("Error logging in:", error.response?.data || error.message);
     }
