@@ -52,7 +52,7 @@ const AddProduct = () => {
         <form onSubmit={handleFormClick}>
           <div className={s.formBox}>
             <div className={s.categoryInput}>
-              <input
+              <input    
                 className={s.inputButton}
                 type="text"
                 name="category"
